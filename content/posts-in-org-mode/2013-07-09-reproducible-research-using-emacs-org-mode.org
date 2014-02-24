@@ -1,0 +1,41 @@
+#+BEGIN_HTML
+---
+title: Reproducible research using Emacs org-mode
+tags: emacs, org-mode
+---
+#+END_HTML
+
+Via the [[http://irreal.org/blog/?p=1992][Irreal]] blog I learned of
+professor John Kitchin's excellent usage of Emacs, org-mode and Python
+to create reproducible research and books.
+
+#+BEGIN_HTML
+<!-- MORE -->
+#+END_HTML
+
+A good definition of reproducible research is:
+
+#+BEGIN_QUOTE
+"I have in the last couple of years fallen in love with org-mode and
+in particular with 'reproducible research', or living documents; the
+ability to have executable sections of code for generating results,
+which can then themselves be further analyzed by other bits of code ---
+in other languages, if that’s appropriate -- and the whole exported as
+a document typeset to what I consider to be high-quality standards.
+The fact that there is also acceptable-quality web output from the
+exact same process is gravy."
+
+           -- [[http://lisp-univ-etc.blogspot.com/2012/03/lisp-hackers-christopher-rhodes.html][Christophe Rhodes]]
+#+END_QUOTE
+
+Here are links to professor Kitchin's material on using Emacs +
+org-mode + Python for reproducible research:
+
+- [[https://www.youtube.com/watch?v=1-dUkyn_fZA][Video]] of presentation at SciPy2013
+- [[http://jkitchin.github.io/][Research site]]
+- [[http://jkitchin.github.io/pycse/][Python Computations in Science and Engineering]] : Complete book done using "reproducible research"
+  - [[https://github.com/jkitchin/pycse][source]] for the book (everything - and reproducible - that's the point)
+- [[http://jkitchin.github.io/dft-book/][Modeling materials using density functional theory]] : Another complete book
+  - [[https://github.com/jkitchin/dft-book][source]]
+
+I'll be studying his books' source.

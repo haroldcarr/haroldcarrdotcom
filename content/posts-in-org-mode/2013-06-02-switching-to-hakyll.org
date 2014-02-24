@@ -1,0 +1,31 @@
+#+BEGIN_HTML
+---
+title: Switching to Hakyll
+tags: hakyll, haskell, pandoc, emacs, org-mode, markdown
+---
+#+END_HTML
+
+I chose [[http://jaspervdj.be/hakyll/][Hakyll]] for blog software
+because it is written in [[http://www.haskell.org/][Haskell]] and it
+is based on the file system instead of a database.  Also, it uses
+[[http://johnmacfarlane.net/pandoc/][Pandoc]], John MacFarlane's
+document conversion library (also written in Haskell).
+
+#+BEGIN_HTML
+<!-- MORE -->
+#+END_HTML
+
+I write posts in [[https://en.wikipedia.org/wiki/Emacs][Emacs]]
+[[http://orgmode.org/][org-mode]], export to
+[[http://en.wikipedia.org/wiki/Markdown][markdown]], then run the
+result through Hakyll/Pandoc.
+
+This site design is copied from [[http://meta.plasm.us/about/][Travis
+Brown's]].  The configuration code also started with his version on
+[[https://github.com/travisbrown/metaplasm][github]].
+
+See [[http://jaspervdj.be/hakyll/examples.html][other sites]] using Hakyll.
+
+My previous blog software was [[http://en.wikipedia.org/wiki/Blosxom][Blosxom]].
+
+

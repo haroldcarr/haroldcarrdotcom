@@ -1,0 +1,143 @@
+#+BEGIN_HTML
+---
+title: My first org-mode post
+tags: emacs, org-mode
+---
+#+END_HTML
+
+Does it work?
+
+#+CAPTION: &nbsp;
+[[file:../../../../../images/remoting-framework.png]]
+
+#+CAPTION: &nbsp;
+[[file:../../../../../images/pept-architecture.jpg]]
+
+#+BEGIN_HTML
+<!-- MORE -->
+#+END_HTML
+
+This is the rest.
+
+A list
+- /italic/
+- *emphasis*
+- =code=
+
+#+CAPTION: &nbsp;
+[[file:../../../../../images/remoting-framework.png]]
+
+Another paragraph.
+
+#+BEGIN_EXAMPLE
+
+main :: IO ()
+main = hakyllWith hakyllConf $ do
+  let engineConf = defaultEngineConfiguration
+  let writerOptions = defaultHakyllWriterOptions { writerHtml5 = True }
+
+  let pandocHtml5Compiler =
+        pandocCompilerWith defaultHakyllReaderOptions writerOptions
+
+  tags <- buildTags "content/posts/*" (fromCapture "tags/*/index.html")
+
+  let postTagsCtx = postCtx tags
+
+  match "content/tmp/*" $ do
+    route stripContent
+    compile copyFileCompiler
+
+  match "images/*.png" $ do
+    route idRoute
+    compile copyFileCompiler
+
+  match "extra/*" $ do
+    route idRoute
+    compile copyFileCompiler
+
+  match (fromList $ vendorScriptFiles engineConf) $ do
+    route $ customRoute (combine "js/vendor" . takeFileName . toFilePath)
+    compile copyFileCompiler
+
+  match (fromList $ lessFiles engineConf) $ do
+    route $ setExtension "css"
+    compile $ getResourceString
+      >>= withItemBody 
+        (unixFilter (lessCommand engineConf) $ "-" : (lessOptions engineConf))
+
+  match "content/about/index.md" $ do
+    route $ stripContent `composeRoutes` setExtension "html"
+    compile $ pandocHtml5Compiler
+      >>= loadAndApplyTemplate "templates/about.html"  siteCtx
+      >>= loadAndApplyTemplate "templates/default.html" siteCtx
+      >>= relativizeUrls
+      >>= deIndexUrls
+
+  tagsRules tags $ \tag pattern -> do
+    let title = "Posts tagged " ++ tag
+
+    route idRoute
+    compile $ do
+      list <- postList tags (\t -> recentFirst t >>= filterM (fmap (elem tag) . getTags . itemIdentifier))
+      let ctx =
+            constField "tag" tag `mappend`
+            constField "posts" list `mappend`
+            constField "feedTitle" title `mappend`
+            constField "title" title `mappend`
+            constField "feedUrl" ("/tags/" ++ tag ++ "/index.xml") `mappend`
+            siteCtx
+      makeItem ""
+        >>= loadAndApplyTemplate "templates/tag-posts.html" ctx
+        >>= loadAndApplyTemplate "templates/default.html" ctx
+        >>= relativizeUrls
+        >>= deIndexUrls
+
+    version "rss" $ do
+      let feedCtx = postCtx tags `mappend` bodyField "description"
+      route $ setExtension "xml"
+      compile $ loadAllSnapshots pattern "content"
+        >>= fmap (take 10) . recentFirst
+        >>= renderAtom (feedConf title) feedCtx
+
+  match "content/posts/*" $ do
+    route $ directorizeDate `composeRoutes` stripContent `composeRoutes` setExtension "html"
+    compile $ do
+      compiled <- pandocHtml5Compiler
+      full <- loadAndApplyTemplate "templates/post.html" postTagsCtx compiled
+      teaser <- loadAndApplyTemplate "templates/post-teaser.html" postTagsCtx $ dropMore compiled
+      saveSnapshot "content" full
+      saveSnapshot "teaser" teaser
+      loadAndApplyTemplate "templates/default.html" (postCtx tags) full
+        >>= relativizeUrls
+        >>= deIndexUrls
+
+  create ["archive.html"] $ do
+    route idRoute
+    compile $ do
+      let archiveCtx =
+            field "posts" (\_ -> postList tags recentFirst) `mappend`
+            constField "title" "Archives" `mappend` siteCtx
+
+      makeItem ""
+        >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
+        >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+        >>= relativizeUrls
+
+  match "content/index.html" $ do
+    route stripContent
+    compile $ do
+      tpl <- loadBody "templates/post-item-full.html"
+      body <- readTemplate . itemBody <$> getResourceBody
+      loadAllSnapshots "content/posts/*" "teaser"
+        >>= fmap (take 10) . recentFirst
+        >>= applyTemplateList tpl (postCtx tags)
+        >>= makeItem
+        >>= applyTemplate body (siteCtx `mappend` bodyField "posts")
+        >>= loadAndApplyTemplate "templates/default.html" siteCtx
+        >>= relativizeUrls
+        >>= deIndexUrls
+
+#+END_EXAMPLE
+
+End.
+
