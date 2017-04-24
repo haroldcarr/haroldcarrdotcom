@@ -1,5 +1,5 @@
 ---
-title: concrete monads : series contents
+title: 'concrete monads : series contents'
 tags: haskell, monad
 ---
 

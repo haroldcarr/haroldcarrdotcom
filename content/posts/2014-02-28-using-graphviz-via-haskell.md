@@ -1,6 +1,6 @@
 ---
 title: using graphviz via haskell
-tags: haskell, graphviz, shelly
+tags: haskell, graphviz
 ---
 
 One of the tools I use for drawing graphs is `dot` from [Graphviz](http://www.graphviz.org/).
@@ -9,7 +9,7 @@ parts.  It was error-prone and a pain to keep the identical parts in
 sync between the multiple `*.dot` files.  I found [Haskell](http://www.haskell.org/)'s
 [Data.GraphViz](http://hackage.haskell.org/package/graphviz-2999.16.0.0/docs/Data-GraphViz.html) package to be the solution.
 
-The documentation for that package is good, but it needs a few more
+The documentation for that package is great, but it needs a few more
 examples.  The purpose of this post is to add examples to the pool.
 
 <!-- MORE -->
@@ -20,15 +20,15 @@ This post uses the following extension and imports:
 
     {-# LANGUAGE OverloadedStrings #-}
     
+    module Main where
+    
     import           Data.Graph.Inductive
     import           Data.GraphViz
-    import           Data.GraphViz.Attributes.Colors.Brewer
     import           Data.GraphViz.Attributes.Complete
-    import           Data.GraphViz.Types.Generalised        as G
+    import           Data.GraphViz.Types.Generalised   as G
     import           Data.GraphViz.Types.Monadic
-    import           Data.Text.Lazy                         as L
+    import           Data.Text.Lazy                    as L
     import           Data.Word
-    import           Shelly                                 (shelly)
     import           WriteRunDot
 
 ---
@@ -55,25 +55,30 @@ The input:
                                    , fmtNode          = fn
                                    , fmtEdge          = fe
                                    }
-      where fn (_,l)   = [(Label . StrLabel) l]
-            fe (_,_,l) = [(Label . StrLabel) l]
+      where fn (_,l)   = [textLabel l]
+            fe (_,_,l) = [textLabel l]
     
             ga = [ GraphAttrs [ RankDir   FromLeft
                               , BgColor   [toWColor White]
                               ]
-                 , NodeAttrs  [ Shape     BoxShape
-                              , FillColor (pastel28CL 2)
-                              , Style     [SItem Filled []]
+                 , NodeAttrs  [ shape     BoxShape
+                              , FillColor (myColorCL 2)
+                              , style     filled
                               ]
                  ]
 
 along with some color helper functions:
 
-    pastel28CL :: Word8 -> ColorList
-    pastel28CL n = toColorList [toColor (BC (BScheme Pastel2 8) n)]
+    -- http://www.colorcombos.com/color-schemes/2025/ColorCombo2025.html
+    myColorCL :: Word8 -> ColorList
+    myColorCL n | n == 1 = c $ (RGB 127 108 138)
+                | n == 2 = c $ (RGB 175 177 112)
+                | n == 3 = c $ (RGB 226 206 179)
+                | n == 4 = c $ (RGB 172 126 100)
+     where c rgb = toColorList [rgb]
     
-    pastel28 :: Word8 -> Attribute
-    pastel28 n = Color $ pastel28CL n
+    myColor :: Word8 -> Attribute
+    myColor n = Color $ myColorCL n
 
 results in:
 
@@ -98,22 +103,22 @@ The `monadic` representation looks very similar to [dot notation](http://www.gra
         nodeAttrs  [style filled]
     
         cluster (Int 0) $ do
-            node "Ready"               [textLabel "ready"
-                                       , Shape DoubleCircle, pastel28 1, FixedSize True, Width 1]
+            node "Ready"               [ textLabel "ready"
+                                       , shape DoubleCircle, myColor 1, FixedSize True, Width 1]
         cluster (Int 1) $ do
             graphAttrs [textLabel "active"]
-            node "Open"                [textLabel "open"
-                                       , Shape       Circle, pastel28 2, FixedSize True, Width 1]
-            node "OpenExpectFragment"  [textLabel "open expect\nfragment"
-                                       , Shape       Circle, pastel28 2, FixedSize True, Width 1]
-            node "HalfClosed"          [textLabel "half-clsd"
-                                       , Shape       Circle, pastel28 2, FixedSize True, Width 1]
-            node "endMessage?"         [textLabel "end req?"
-                                       , Shape DiamondShape, pastel28 6, FixedSize True, Width 1.25, Height 1.25]
-            node "fragmentEndMessage?" [textLabel "end req?"
-                                       , Shape DiamondShape, pastel28 6, FixedSize True, Width 1.25, Height 1.25]
-            node "requestFragment"     [textLabel "FRAGMENT"
-                                       , Shape     BoxShape, pastel28 5]
+            node "Open"                [ textLabel "open"
+                                       , shape       Circle, myColor 2, FixedSize True, Width 1]
+            node "OpenExpectFragment"  [ textLabel "open expect\nfragment"
+                                       , shape       Circle, myColor 2, FixedSize True, Width 1]
+            node "HalfClosed"          [ textLabel "half-clsd"
+                                       , shape       Circle, myColor 2, FixedSize True, Width 1]
+            node "endMessage?"         [ textLabel "end req?"
+                                       , shape DiamondShape, myColor 4, FixedSize True, Width 1.25, Height 1.25]
+            node "fragmentEndMessage?" [ textLabel "end req?"
+                                       , shape DiamondShape, myColor 4, FixedSize True, Width 1.25, Height 1.25]
+            node "requestFragment"     [ textLabel "FRAGMENT"
+                                       , shape     BoxShape, myColor 3]
     
             "Open"                     --> "endMessage?"
             edge "endMessage?"             "HalfClosed"          [textLabel "true"]
@@ -125,14 +130,14 @@ The `monadic` representation looks very similar to [dot notation](http://www.gra
     
         cluster (Int 2) $ do
             graphAttrs [textLabel "done"]
-            node "Closed"              [textLabel "closed"
-                                       , Shape DoubleCircle, pastel28 1, FixedSize True, Width 1]
+            node "Closed"              [ textLabel "closed"
+                                       , shape DoubleCircle, myColor 1, FixedSize True, Width 1]
     
         -- outside the box(es)
-        node "request"                 [textLabel "REQUEST"
-                                       , Shape     BoxShape, pastel28 5]
-        node "response"                [textLabel "RESPONSE"
-                                       , Shape     BoxShape, pastel28 5]
+        node "request"                 [ textLabel "REQUEST"
+                                       , shape     BoxShape, myColor 3]
+        node "response"                [ textLabel "RESPONSE"
+                                       , shape     BoxShape, myColor 3]
     
         "Ready"      --> "request"
         "request"    --> "Open"
@@ -148,25 +153,25 @@ messages):
 
 ---
 
-# enhancement request
+# minor limitation and workaround
 
 Quite often I create diagrams that do not use clustering but have
 different node types, each type with a distinct shape, size and color.
 In dot, one can factor the shared attributes via `subgraph`:
 
-    digraph exe {
+    digraph ex3 {
         graph [rankdir=LR];
         subgraph {
-            node [shape=doublecircle,fixedsize=true,width=1,style=filled,color="/pastel28/1"];
+            node [shape=doublecircle,fixedsize=true,width=1,style=filled,color="#7f6c8a"];
             Open [label=open];
             Closed [label=closed];
         }
         subgraph {
-            node [shape=circle,fixedsize=true,width=1,style=filled,color="/pastel28/1"];
+            node [shape=circle,fixedsize=true,width=1,style=filled,color="#7f6c8a"];
             ClosedWaitingAck [label="clsd waiting\nACK"];
         }
         subgraph {
-            node [shape=box,width=1,style=filled,color="/pastel28/5"];
+            node [shape=box,width=1,style=filled,color="#e2ceb3"];
             cancel [label=CANCEL];
             cancelAck [label=CANCEL_ACK];
         }
@@ -180,26 +185,34 @@ which results in:
 
 ![&nbsp;](../images/2014-02-28-using-graphviz-via-haskell-ex3.dot.png)
 
-Unfortunately `Data.GraphViz` only supports clustering (or at least I
-have not found `subgraph` support yet). The dot output above was
-produced from:
+`Data.GraphViz` supports `subgraph` for `Data.Graph.Inductive` graphs
+via the `isDotCluster` setting in `GraphvizParams`.
+
+It also supports `subgraph` for `Data.GraphViz.Types` `Canonical` and
+`Generalised` graphs via setting `isCluster` to `False` for their
+appropriate `DotSubGraph` types.
+
+However, `Graph` and `Monadic` do not (yet) have a setting that
+supports `subgraph`.
+
+The dot output above was produced from:
 
     ex3 :: G.DotGraph L.Text
-    ex3 = digraph (Str "exe") $ do
+    ex3 = digraph (Str "ex3") $ do
     
         graphAttrs [RankDir FromLeft]
     
         cluster (Int 0) $ do
-            nodeAttrs               [Shape DoubleCircle, FixedSize True, Width 1, style filled, pastel28 1]
+            nodeAttrs               [shape DoubleCircle, FixedSize True, Width 1, style filled, myColor 1]
             node "Open"             [textLabel "open"]
             node "Closed"           [textLabel "closed"]
     
         cluster (Int 1) $ do
-            nodeAttrs               [Shape       Circle, FixedSize True, Width 1, style filled, pastel28 1]
+            nodeAttrs               [shape       Circle, FixedSize True, Width 1, style filled, myColor 1]
             node "ClosedWaitingAck" [textLabel "clsd waiting\nACK"]
     
         cluster (Int 2) $ do
-            nodeAttrs               [shape     BoxShape,                 Width 1, style filled, pastel28 5]
+            nodeAttrs               [shape     BoxShape,                 Width 1, style filled, myColor 3]
             node "cancel"           [textLabel "CANCEL"]
             node "cancelAck"        [textLabel "CANCEL_ACK"]
     
@@ -223,61 +236,79 @@ If `cluster_N` is not removed what results is:
 
 which is not what I'm after.
 
+## workaround
+
+Since all of Haskell is available to build the graph, one can do:
+
+    doubleCircle :: n -> Text -> Dot n
+    doubleCircle n l = node n [textLabel l, shape DoubleCircle, FixedSize True, Width 1, style filled, myColor 1]
+    
+    circle       :: n -> Text -> Dot n
+    circle       n l = node n [textLabel l, shape       Circle, FixedSize True, Width 1, style filled, myColor 1]
+    
+    rectangle    :: n -> Text -> Dot n
+    rectangle    n l = node n [textLabel l, shape     BoxShape,                 Width 1, style filled, myColor 3]
+    
+    open, closed, waiting, cancel, cancelAck :: Dot L.Text
+    open      = doubleCircle "Open"             "open"
+    closed    = doubleCircle "Closed"           "closed"
+    waiting   = circle       "ClosedWaitingAck" "clsd waiting\nACK"
+    cancel    = rectangle    "cancel"           "CANCEL"
+    cancelAck = rectangle    "cancelAck"        "CANCEL_ACK"
+    
+    ex4 :: G.DotGraph L.Text
+    ex4 = digraph (Str "ex4") $ do
+    
+        graphAttrs [RankDir FromLeft]
+        open; closed; waiting; cancel; cancelAck
+    
+        "Open"             --> "cancel"
+        "cancel"           --> "ClosedWaitingAck"
+        "ClosedWaitingAck" --> "cancelAck"
+        "cancelAck"        --> "Closed"
+
+This results in the exact same output as the manually editted graph:
+
+![&nbsp;](../images/2014-02-28-using-graphviz-via-haskell-ex4.png)
+
+I also use the above "trick" to factor out common parts of graphs and
+share them (my original motivation for using `Data.GraphViz` instead
+of manually writing `dot`).
+
 ---
 
-# running dot from Haskell via Shelly
+# creating images
 
-To run `dot` on the dot output of `Data.GraphViz` I use some utilities that use the [Shelly](https://github.com/yesodweb/Shelly.hs) shell scripting DSL:
+Images for these examples can be created using the utilities (the
+important piece being `runGraphvizCommand` and `addExtension`):
 
-    {-# LANGUAGE ExtendedDefaultRules #-}
-    {-# LANGUAGE OverloadedStrings    #-}
-    {-# OPTIONS_GHC -fno-warn-type-defaults #-}
+    {-# LANGUAGE MultiParamTypeClasses #-}
+    {-# LANGUAGE OverloadedStrings     #-}
     
     module WriteRunDot where
     
-    import           Control.Monad          (forM_)
+    import           Control.Monad   (forM_)
     import           Data.GraphViz
-    import           Data.GraphViz.Printing
-    import qualified Data.Text              as T
-    import           Data.Text.Lazy         as L
-    import           Shelly
-    default (T.Text)
+    import           System.FilePath
     
-    writeDot :: PrintDot a => (T.Text, a) -> Sh ()
-    writeDot ng = writeDotToDir "/tmp" ng
+    doDots :: PrintDotRepr dg n => [(FilePath, dg n)] -> IO ()
+    doDots cases = forM_ cases createImage
     
-    writeDotToDir :: PrintDot a => T.Text -> (T.Text, a) -> Sh ()
-    writeDotToDir d (n,g) =
-        writefile (fromText (mkFileName d n "dot"))
-                  (T.pack (unpack (renderDot $ toDot g)))
+    createImage :: PrintDotRepr dg n => (FilePath, dg n) -> IO FilePath
+    createImage (n, g) = createImageInDir "/tmp" n Png g
     
-    runDot :: T.Text -> Sh ()
-    runDot n = runDotFromTo "/tmp" "/tmp" n "png"
-    
-    runDotFromTo :: T.Text -> T.Text -> T.Text -> T.Text -> Sh ()
-    runDotFromTo f t n e = do
-        let from = mkFileName f n "dot"
-        let to   = mkFileName t n e
-        run_ "dot" [T.append "-T" e, from, "-o", to]
-    
-    doDots :: PrintDot a => [(T.Text, a)] -> Sh ()
-    doDots cases = forM_ cases (\x -> do writeDot x; (runDot . fst) x)
-    
-    mkFileName :: T.Text -> T.Text -> T.Text -> T.Text
-    mkFileName d n e = T.concat [d,"/",n,".",e]
+    createImageInDir :: PrintDotRepr dg n => FilePath -> FilePath -> GraphvizOutput -> dg n -> IO FilePath
+    createImageInDir d n o g = Data.GraphViz.addExtension (runGraphvizCommand Dot g) o (combine d n)
 
 and use the utilities via:
 
     main :: IO ()
-    main = shelly $ do
+    main = do
         doDots [ ("ex1" , graphToDot ex1Params ex1) ]
         doDots [ ("ex2" , ex2)
                , ("ex3" , ex3)
+               , ("ex4" , ex4)
                ]
-
-Note: I would rather rather pipe the resulting dot files into `runDot`
-(rather than writing `*.dot` files via `writeDot`), but I haven't
-figured out how to do that in Shelly yet.
 
 ---
 

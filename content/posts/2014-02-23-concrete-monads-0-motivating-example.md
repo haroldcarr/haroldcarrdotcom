@@ -1,5 +1,5 @@
 ---
-title: concrete monads 0 : motivating example
+title: 'concrete monads 0 : motivating example'
 tags: haskell, monad
 ---
 

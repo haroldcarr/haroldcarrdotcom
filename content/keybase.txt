@@ -1,0 +1,67 @@
+==================================================================
+https://keybase.io/haroldcarr
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://haroldcarr.com
+  * I am haroldcarr (https://keybase.io/haroldcarr) on keybase.
+  * I have a public key with fingerprint 661A 5D83 837E 9DC5 68F8  F0E3 3C01 0A22 D37D 3613
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "661a5d83837e9dc568f8f0e33c010a22d37d3613",
+            "host": "keybase.io",
+            "key_id": "3c010a22d37d3613",
+            "kid": "010164c59fa57f2adce5f994a942b11af61eb1ec8e3f6cacc9c008d838dbbde23cc00a",
+            "uid": "dce83821f6d60995e578a26e9ad6ed00",
+            "username": "haroldcarr"
+        },
+        "service": {
+            "hostname": "haroldcarr.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1420654271,
+    "expire_in": 157680000,
+    "prev": "9d33d7e7b758a67295e634cf912dabc7beccfe0d3b0236ed310d35024305e7e7",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.1
+Comment: https://keybase.io/crypto
+
+yMIUAnicbVJbSBVRFL2+sqwsCEqiokaDlJvOzLnzuoklRFBmQSqGWJcz55y5jvcx
+t7kPX/khGEIvoo+kMgpCRcUgLDRQevhIFBRTyNQfISlIwST7ULTOSH3V+Tlnr73W
+Ontvdt/2GFtC1FROW0mBcvph1PDbk2FbfnvkdRWjGriCcVYxHrJxabrfTcyAqftD
+jJMRRQ4KWAYykIiCkSDKmqyxBADEcizkeQwkDEQOMHamxAhaCmqjwiBJ1w2K0cCl
+Y4r+h+/ZSFCYEx1IUDQoSBoPMSKCpigOqDh4leOgJnJE5QiSCdBEBBFSEMvKVkVY
+VTHhAaIxpHbhDTsqpyme00QssooiEEGSIS8SBWKRYJa1iEFi+qGPUHYJNA0vRtA0
+mWo7Q/GIjog1BKuXfzjpyPBRfcA0QgYyvFYuFAo4LWmoImBxy4jq+uPiUnU/pqOk
+gggxg7rhZ5wcZaKQbtlyDp4VBQcvcXaGlAd0k7h0iyFIoszSY31DItRSwQBgiUiq
+JMhQlHjakggcSFM4HkMVSSpBSCMsBirLA9oi4OhbYHkHYAVCdYzV1xW/wThFWiZ0
+U8ug7vbDUNgkTPW7N8WxtqgE26a4aGsZbAlbdv5dEftE/NpuQ26SEuNqe3dcKOx4
+Ee5Y7Vw5lj5dP1Yxfb1rJtX89jGtgTWn8m8fmH0+EPFWDFVO9yWPpfDZjs9M8b2M
+0pzJB3kFBYeWSieafEOjNZGj3b/6nQ18+cyemO+2tBxuar4y8WvjauHl+/0fdpXf
+as9qHMq2568sP3LOuauk2OzhLy/fd2Z5zu9d1VqLepoXl9YWDl6djG9s864/nS0y
+MpLtebNHeuYaKrflPgtcsifFdRnjKfsDZ8/5Mmtu3qhNXZAGc4731j/2bB2Vl725
+0ZXwWlL34ROTrWCgbHy+bSF8arWlTvp5Z/HuGe+T9R/jdZkyGNzcHHiVOPLpYsu+
+mJHfNf4u4Q==
+=J0Hr
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/haroldcarr
+
+==================================================================

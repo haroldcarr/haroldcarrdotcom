@@ -1,10 +1,10 @@
 ---
-title: concrete monads 1 : Maybe, Either, list, IO
+title: 'concrete monads 1 : Maybe, Either, list, IO'
 tags: haskell, monad
 ---
 
 
-Last Modified : 2014 Feb 19 (Wed) 12:35:40 by Harold Carr.
+Last Modified : 2017 Apr 24 (Mon) 12:59:38 by Harold Carr.
 
 ---
 
@@ -37,6 +37,8 @@ This post is part of a [series of posts on monads](http://haroldcarr.com/posts/2
 -   Particular monads, `IO` and some others, do "real" side-effects.
     The monadic part of `IO` is used for ordering, not the side-effects
     themselves.
+
+<!-- MORE -->
 
 ---
 

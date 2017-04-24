@@ -1,32 +1,30 @@
----
+<div class="HTML">
+&#x2014;
 title: About me
----
+&#x2014;
+
+</div>
 
 **software**
 
-Harold Carr is the architect of InfiniBand usage in WebLogic Server at
-Oracle.  He is also responsible for SOAP Web Service Technology at
-[Oracle](http://oracle.com/) (a position he also held at Sun Microsystems). He designed the
-pluggable transports, the asynchronous client and service APIs, and
-streaming I/O used in Oracle's SOAP stack.  He also lead the
-consolidation of Oracle's three SOAP stacks down to one centering on
-the Sun SOAP stack (aka Metro).
+Harold Carr works on cloud infrastructure and blockchain scalability at Oracle.
+At Oracle he has also worked on InfiniBand transport and SOAP Web Service
+Technology. He designed the pluggable transports, the asynchronous client and
+service APIs, and streaming I/O used in Oracle’s SOAP stack.
 
-Previous to this role he was responsible for RMI-IIOP load-balancing
-and fail-over in the GlassFish Application Server. He designed the
-core architecture used in Sun's CORBA ORB and in Sun's JAX-WS 2.0
-implementation and the scalable socket communications architecture
-(aka Grizzly) used in GlassFish HTTP and IIOP. He helped write the OMG
-Portable Object Adapter specification and was chairperson of the OMG
-Portable Interceptor specification.
+At Sun Microsystems he was responsible for RMI-IIOP load-balancing and fail-over
+in the GlassFish Application Server. He designed the core architecture used in
+Sun’s CORBA ORB and in Sun’s JAX-WS 2.0 implementation and the scalable socket
+communications architecture (aka Grizzly) used in GlassFish HTTP and IIOP. He
+helped write the OMG Portable Object Adapter specification and was chairperson
+of the OMG Portable Interceptor specification.
 
-Previous to Oracle and Sun, Harold worked on distributed Lisp and C++
-with Hewlett-Packard Research Laboratories and Schlumberger Research
-Laboratories, was Chief Architect of Visual Lisp technology at
-Autodesk, and was a logic simulation consultant for Cirrus Logic. He
-holds a Ph.D., in Computer Science from the University of Utah.
+He has worked on distributed Lisp and C++ with Hewlett-Packard Research
+Laboratories and Schlumberger Research Laboratories, was Chief Architect of
+Visual Lisp technology at Autodesk, and was a logic simulation consultant for
+Cirrus Logic. He holds a Ph.D., in Computer Science from the University of Utah.
 
-Vita: [html](http://haroldcarr.net/computerScience/cs-vita.html)  [pdf](http://haroldcarr.net/computerScience/cs-vita.pdf)
+Vita: [html](http://haroldcarr.com/computerScience/cs-vita.html) [pdf](http://haroldcarr.com/computerScience/cs-vita.pdf)
 
 **music, poetry**
 
@@ -42,27 +40,27 @@ Zhou, China, invited poet for the Utah State Governor and commissioned
 composer/performer at New Music America. He has worked with the
 Windolls Theatre of Images in Colombia, Hong Kong, San Francisco and
 Seattle. He has been a member of a number of popular Utah-based bands
-such as [The Cowdaddies](http://cowdaddies.com/), The
-Jarman/Kingston Quartet, Amnesia and Wood.  He currently works with
-[blue haiku](http://www.bluehaiku.com),
+such as
+[The Cowdaddies](https://haroldcarr.bandcamp.com/album/the-cowdaddies),
 [Red Rock Rondo](http://redrockrondo.com/),
-[The Emily Merrell Group](http://www.emilymerrell.com/), the Mark
-Chaney Trio and Good Grass.
+[blue haiku](http://www.bluehaiku.com),
+The Jarman/Kingston Quartet,
+Amnesia
+and
+Wood.
+He currently works with
+the [Emily Merrell Group](https://haroldcarr.bandcamp.com/album/emily-merrell-group-live-at-the-2013-utah-arts-festival),
+[Te Azul](https://haroldcarr.bandcamp.com/album/strata)
+and
+the [Mark Chaney Trio](https://haroldcarr.bandcamp.com/album/high-standards).
 
 **elsewhere on the web**
 
--   [haroldcarr.com](http://haroldcarr.com) : technology blog
-
--   [haroldcarr.org](http://haroldcarr.org) : life, music, poetry, hiking, &#x2026; blog
-
--   [java.net blog](https://www.java.net//blogs/haroldcarr/)
-
+-   [haroldcarr.com](http://haroldcarr.com)
+-   [Twitter](http://twitter.com/haroldcarr)
+-   [GitHub](https://github.com/haroldcarr)
+-   [YouTube](https://www.youtube.com/channel/UCX3kgBwKQmjdtA36c45VQyQ)
+-   [BandCamp](https://haroldcarr.bandcamp.com/)
 -   [LinkedIn](http://www.linkedin.com/in/haroldcarr)
-
--   [G+](https://plus.google.com/u/0/113403576113555074756/posts/p/pub)
-
 -   [Facebook](https://www.facebook.com/harold.carr)
 
--   [GitHub](https://github.com/haroldcarr)
-
--   [Twitter](http://twitter.com/haroldcarr)
