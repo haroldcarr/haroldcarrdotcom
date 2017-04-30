@@ -13,6 +13,9 @@ import           HC.Tags
 import           System.FilePath     (splitExtension)
 import           Text.Pandoc.Options (writerHtml5)
 
+hcNumCurrent :: Int
+hcNumCurrent = 12
+
 hcMain :: Configuration -> SiteConfiguration -> (String -> FeedConfiguration) -> IO ()
 hcMain hakyllConf siteConf feedConf = hakyllWith hakyllConf $ do
   -- let engineConf          = defaultEngineConfiguration
@@ -172,7 +175,7 @@ hcMain hakyllConf siteConf feedConf = hakyllWith hakyllConf $ do
       let feedCtx = postCtx tags `mappend` bodyField "description"
       route $ setExtension "xml"
       compile $ loadAllSnapshots pattern "content"
-        >>= fmap (take 10) . recentFirst
+        >>= fmap (take hcNumCurrent) . recentFirst
         >>= renderAtom (feedConf title) feedCtx
 
   match "content/posts/*" $ do
@@ -206,7 +209,7 @@ hcMain hakyllConf siteConf feedConf = hakyllWith hakyllConf $ do
       tpl  <- loadBody "templates/post-item-full.html"
       body <- readTemplate . itemBody <$> getResourceBody
       loadAllSnapshots "content/posts/*" "teaser"
-        >>= fmap (take 10) . recentFirst
+        >>= fmap (take hcNumCurrent) . recentFirst
         >>= applyTemplateList tpl (postCtx tags)
         >>= makeItem
         >>= applyTemplate body (siteCtx `mappend` bodyField "posts")
@@ -230,7 +233,7 @@ hcMain hakyllConf siteConf feedConf = hakyllWith hakyllConf $ do
     route idRoute
     compile $ do
       let feedCtx = postCtx tags `mappend` bodyField "description"
-      posts <- mapM deIndexUrls =<< fmap (take 10) . recentFirst =<<
+      posts <- mapM deIndexUrls =<< fmap (take hcNumCurrent) . recentFirst =<<
         loadAllSnapshots "content/posts/*" "content"
       renderAtom (feedConf "blog") feedCtx (posts)
 

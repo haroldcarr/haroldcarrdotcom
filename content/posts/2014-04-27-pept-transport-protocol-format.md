@@ -1,5 +1,5 @@
 ---
-title: 'PEPT: transport, protocol, format'
+title: 'PEPT: Presentation, Encoding, Protocol, Transport'
 tags: pept
 ---
 
