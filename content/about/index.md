@@ -1,9 +1,3 @@
-<div class="HTML">
-&#x2014;
-title: About me
-&#x2014;
-
-</div>
 
 **software**
 
@@ -59,7 +53,7 @@ the [Mark Chaney Trio](https://haroldcarr.bandcamp.com/album/high-standards).
 -   [haroldcarr.com](http://haroldcarr.com)
 -   [Twitter](http://twitter.com/haroldcarr)
 -   [GitHub](https://github.com/haroldcarr)
--   [YouTube](https://www.youtube.com/channel/UCX3kgBwKQmjdtA36c45VQyQ)
+-   [YouTube](https://www.youtube.com/user/haroldcarrtube/playlists?sort=lad&flow=grid&view=1)
 -   [BandCamp](https://haroldcarr.bandcamp.com/)
 -   [LinkedIn](http://www.linkedin.com/in/haroldcarr)
 -   [Facebook](https://www.facebook.com/harold.carr)
