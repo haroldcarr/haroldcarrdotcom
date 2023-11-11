@@ -1,10 +1,11 @@
-
 **software**
 
-Harold Carr works on cloud infrastructure and blockchain scalability at Oracle.
-At Oracle he has also worked on InfiniBand transport and SOAP Web Service
-Technology. He designed the pluggable transports, the asynchronous client and
-service APIs, and streaming I/O used in Oracle’s SOAP stack.
+Harold Carr works in Oracle Labs on applications of verified
+credentials and zero-knowledge proofs. At Oracle he has also worked on
+blockchain scalability and safety proofs, cloud infrastructure,
+InfiniBand transport and SOAP Web Service Technology. He designed the
+pluggable transports, the asynchronous client and service APIs, and
+streaming I/O used in Oracle’s SOAP stack.
 
 At Sun Microsystems he was responsible for RMI-IIOP load-balancing and fail-over
 in the GlassFish Application Server. He designed the core architecture used in
@@ -13,12 +14,12 @@ communications architecture (aka Grizzly) used in GlassFish HTTP and IIOP. He
 helped write the OMG Portable Object Adapter specification and was chairperson
 of the OMG Portable Interceptor specification.
 
-He has worked on distributed Lisp and C++ with Hewlett-Packard Research
+He has worked on distributed Lisp and distributed C++ with Hewlett-Packard Research
 Laboratories and Schlumberger Research Laboratories, was Chief Architect of
 Visual Lisp technology at Autodesk, and was a logic simulation consultant for
 Cirrus Logic. He holds a Ph.D., in Computer Science from the University of Utah.
 
-Vita: [html](http://haroldcarr.com/computerScience/cs-vita.html) [pdf](http://haroldcarr.com/computerScience/cs-vita.pdf)
+Vita:  [html](http://haroldcarr.com/computerScience/vita-cs.html)  [pdf](http://haroldcarr.com/computerScience/vita-cs.pdf)
 
 **music, poetry**
 
@@ -38,23 +39,24 @@ such as
 [The Cowdaddies](https://haroldcarr.bandcamp.com/album/the-cowdaddies),
 [Red Rock Rondo](http://redrockrondo.com/),
 [blue haiku](http://www.bluehaiku.com),
-The Jarman/Kingston Quartet,
-Amnesia
-and
-Wood.
-He currently works with
 the [Emily Merrell Group](https://haroldcarr.bandcamp.com/album/emily-merrell-group-live-at-the-2013-utah-arts-festival),
-[Te Azul](https://haroldcarr.bandcamp.com/album/strata)
-and
-the [Mark Chaney Trio](https://haroldcarr.bandcamp.com/album/high-standards).
+The Jarman/Kingston Quartet,
+Amnesia,
+Wood,
+the [Mark Chaney Trio](https://haroldcarr.bandcamp.com/album/high-standards),
+[Te Azul](https://haroldcarr.bandcamp.com/album/strata).
+He currently works with
+[Better off with the Blues](https://bowtb.com/)
+in addition to freelance work.
 
 **elsewhere on the web**
 
 -   [haroldcarr.com](http://haroldcarr.com)
--   [Twitter](http://twitter.com/haroldcarr)
+-   [Mastodon](https://functional.cafe/web/@haroldcarr)
 -   [GitHub](https://github.com/haroldcarr)
 -   [YouTube](https://www.youtube.com/user/haroldcarrtube/playlists?sort=lad&flow=grid&view=1)
 -   [BandCamp](https://haroldcarr.bandcamp.com/)
 -   [LinkedIn](http://www.linkedin.com/in/haroldcarr)
 -   [Facebook](https://www.facebook.com/harold.carr)
+-   [Twitter](http://twitter.com/haroldcarr)
 

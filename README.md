@@ -1,4 +1,4 @@
-haroldcarr.[com|net|org]
+haroldcarr.[com|org]
 ---------
 
 My [haroldcarr.com](http://haroldcarr.com/) blog based on [Hakyll](http://jaspervdj.be/hakyll/).

@@ -6,10 +6,12 @@ title: About me
 
 *software*
 
-Harold Carr works on cloud infrastructure and blockchain scalability at Oracle.
-At Oracle he has also worked on InfiniBand transport and SOAP Web Service
-Technology. He designed the pluggable transports, the asynchronous client and
-service APIs, and streaming I/O used in Oracle’s SOAP stack.
+Harold Carr works in Oracle Labs on applications of verified
+credentials and zero-knowledge proofs. At Oracle he has also worked on
+blockchain scalability and safety proofs, cloud infrastructure,
+InfiniBand transport and SOAP Web Service Technology. He designed the
+pluggable transports, the asynchronous client and service APIs, and
+streaming I/O used in Oracle’s SOAP stack.
 
 At Sun Microsystems he was responsible for RMI-IIOP load-balancing and fail-over
 in the GlassFish Application Server. He designed the core architecture used in
@@ -18,50 +20,41 @@ communications architecture (aka Grizzly) used in GlassFish HTTP and IIOP. He
 helped write the OMG Portable Object Adapter specification and was chairperson
 of the OMG Portable Interceptor specification.
 
-He has worked on distributed Lisp and C++ with Hewlett-Packard Research
+He has worked on distributed Lisp and distributed C++ with Hewlett-Packard Research
 Laboratories and Schlumberger Research Laboratories, was Chief Architect of
 Visual Lisp technology at Autodesk, and was a logic simulation consultant for
 Cirrus Logic. He holds a Ph.D., in Computer Science from the University of Utah.
 
-Vita: [[http://haroldcarr.com/computerScience/cs-vita.html][html]] [[http://haroldcarr.com/computerScience/cs-vita.pdf][pdf]]
+Vita:  [[http://haroldcarr.com/computerScience/vita-cs.html][html]]  [[http://haroldcarr.com/computerScience/vita-cs.pdf][pdf]]
 
 *music, poetry*
 
 Harold Carr (acoustic and electric bass) has performed and recorded
 with numerous artists such as Bobby McFerrin, Crystal Gayle, Lightnin'
 Hopkins, John McCuen, Steve Lacy, Catie Curtis and Matt Flinner.  He
-has published three books of poetry: <em>Wekwomteks</em>, <em>Being
-Time</em> and <em>Where You Were</em>. Harold has been a
-musician/poet-in-residence at the Banff Centre for the Arts in Canada,
-guest soloist at the Frutillar Music Festival in Chile,
-composer/soloist with the Guangdong Modern Dance Company in Guang
-Zhou, China, invited poet for the Utah State Governor and commissioned
-composer/performer at New Music America. He has worked with the
-Windolls Theatre of Images in Colombia, Hong Kong, San Francisco and
-Seattle. He has been a member of a number of popular Utah-based bands
-such as
-[[https://haroldcarr.bandcamp.com/album/the-cowdaddies][The Cowdaddies]],
-[[http://redrockrondo.com/][Red Rock Rondo]],
-[[http://www.bluehaiku.com][blue haiku]],
-The Jarman/Kingston Quartet,
-Amnesia
-and
-Wood.
-He currently works with
-the [[https://haroldcarr.bandcamp.com/album/emily-merrell-group-live-at-the-2013-utah-arts-festival][Emily Merrell Group]],
-[[https://haroldcarr.bandcamp.com/album/strata][Te Azul]]
-and
-the [[https://haroldcarr.bandcamp.com/album/high-standards][Mark Chaney Trio]].
+has published three books of poetry: /Wekwomteks/, /Being Time/ and
+/Where You Were/. Harold has been a musician/poet-in-residence
+at the Banff Centre for the Arts in Canada, guest soloist at the
+Frutillar Music Festival in Chile, composer/soloist with the Guangdong
+Modern Dance Company in Guang Zhou, China, invited poet for the Utah
+State Governor and commissioned composer/performer at New Music
+America. He has worked with the Windolls Theatre of Images in
+Colombia, Hong Kong, San Francisco and Seattle. He has been a member
+of a number of popular Utah-based bands such as [[https://haroldcarr.bandcamp.com/album/the-cowdaddies][The Cowdaddies]], [[http://redrockrondo.com/][Red
+Rock Rondo]], [[http://www.bluehaiku.com][blue haiku]], the [[https://haroldcarr.bandcamp.com/album/emily-merrell-group-live-at-the-2013-utah-arts-festival][Emily Merrell Group]], The Jarman/Kingston
+Quartet, Amnesia, Wood, the [[https://haroldcarr.bandcamp.com/album/high-standards][Mark Chaney Trio]], [[https://haroldcarr.bandcamp.com/album/strata][Te Azul]].  He currently
+works with [[https://bowtb.com/][Better off with the Blues]] in addition to freelance work.
 
 *elsewhere on the web*
 
 - [[http://haroldcarr.com][haroldcarr.com]]
-- [[http://twitter.com/haroldcarr][Twitter]]
+- [[https://functional.cafe/web/@haroldcarr][Mastodon]]
 - [[https://github.com/haroldcarr][GitHub]]
 - [[https://www.youtube.com/user/haroldcarrtube/playlists?sort=lad&flow=grid&view=1][YouTube]]
 - [[https://haroldcarr.bandcamp.com/][BandCamp]]
 - [[http://www.linkedin.com/in/haroldcarr][LinkedIn]]
 - [[https://www.facebook.com/harold.carr][Facebook]]
+- [[http://twitter.com/haroldcarr][Twitter]]
 
 # - [[http://haroldcarr.org][haroldcarr.org]] : life, music, poetry, hiking, ... blog
 # - [[https://plus.google.com/u/0/113403576113555074756/posts/p/pub][G+]]
